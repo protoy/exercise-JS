@@ -1,0 +1,6 @@
+2020/12/22
+Element UI表单验证
+单条el-form-item添加了自定义表单验证规则，会覆盖当前item的form的验证规则
+
+type:'number'时,min:,max:给出的验证范围包含最大最小值
+
