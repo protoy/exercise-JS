@@ -1,0 +1,12 @@
+2021/1/6
+异步获取的数组，在其他函数中直接调用该异步函数，并打印该数组，浏览器中显示__ob__: Observer，点开后有具体数据，但是无法获取里面的值，.length方法获得长度为0
+原因：__ob__: Observer为VUE监听到的数据，此时异步函数可能还未执行完，打印改数组，会直接调用toString方法，所以点开打印值后会有数据，但是无法直接获取该数组中的值
+
+1/12
+promise中，如果后端返回数据status为500，then里不会触发，需要用catch
+catch里console error之后只有报错信息，但是error.response之后就有完整信息
+
+1/23
+element UI dialog遮罩层
+:modal-append-to-body="false"
+:append-to-body="true" 
