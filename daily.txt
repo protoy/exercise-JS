@@ -1,9 +1,56 @@
-2020/12/22
-Element UI表单验证
-单条el-form-item添加了自定义表单验证规则，会覆盖当前item的form的验证规则
+2020/11/11
+Node
+npm install polyfill时报错4048，提示rename   node_moudles\jstat\package.json.34234344
+但是jstat文件夹不存在。
+npm install 同样报类似错误，但是后面数字不一定一样
+尝试npm cache clean --force 不生效
+npm版本6.14.8，nodejs版本从12.xx.xx更新到最新14.15.0之后问题仍然存在
+使用
+npm cache clear --force && npm install --no-shrinkwrap --update-binary后
+npm install可用，报了7个warning，需要npm audit fix修复，稳一手修复了其中一个之后
+可以正常安装polyfill
 
-type:'number'时,min:,max:给出的验证范围包含最大最小值
+2020/11/12
+样式问题：dialog每次首次点开时样式有问题，刷新后回复正常
 
-2021/2/6
-工具人进阶路线：跟着panjiacheng项目自己动手做一遍，配置路由、定制树状组件
-test
+2020/11/17
+搭建页面框架时router返回原页面报错，data必须返回一个对象
+data() {
+	return {}
+}即可解决
+
+2020/12/4
+$nextTick 在下一次DOM更新后调用
+情况：左侧树结构，点击节点，需要显示右侧第三方插件的图表，用假数据进行调试时候，浏览器报错，提示右侧组件中的某个函数不存在
+
+2020/12/7
+setcurrentKey，在highlight为false时，只会加上is-current的class，不会高亮
+
+2020/12/9
+.map（）的用法
+
+2020/12/11
+项目部署，IIS服务，如果无法联网，或者从公司内部资源库中安装时，会有组件不全的情况，无法部署。统一使用TOMCAT
+TOMCAT部署之后，IE浏览器打开会报错，某个文件中缺少“：”，推荐使用chrome浏览器
+数据库部署之后，需要重新设置时区
+
+2020/12/12
+element ui，树结构，如果后端获取数据字段名称与组件不符，设置props：obj，在obj中进行关联即可
+
+2020/12/13
+JSON.stringify
+JSON.parse
+Math.min.apply
+Math.log
+
+12/22
+后端返回数据只有数字，需要后端规范。或者request中拦截，影响较大
+
+element ui表单验证：单选不同，需要输入内容不同，v-show会报错，需要v-if，但是切换时仍有问题，
+解决方法：1.验证:rules 为一个函数，该函数根据不同条件返回data里不同rules
+2.切换单选时清空验证
+3.给v-if的item自定义验证
+
+12/28
+element TREE，凌工思路：几种不同内容放在同一棵树下，点击事件根据节点类型进行判断
+原因：1.请求接口时只需调用一个接口
