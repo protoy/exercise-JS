@@ -11,4 +11,5 @@ element UI dialog遮罩层
 :modal-append-to-body="false"
 :append-to-body="true" 
 
-latest
+2/5
+产品不应当替客户做决定，排他性不得影响原先布局
