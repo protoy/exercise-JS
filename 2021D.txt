@@ -13,3 +13,25 @@ element UI dialog遮罩层
 
 2/5
 产品不应当替客户做决定，排他性不得影响原先布局
+
+2/23
+当前项目中两种不同风格封装接口
+http.js文件中，封装有get、post等方法，与以下A格式的接口
+xxxxxxxx: function(paramObj) {
+    return post("/xxxx/xxxxx/xxxxx.do", paramObj);
+  },
+并且放到全局变量api中
+
+request文件中封装了方法（移植项目的方法）
+api文件中，单纯只有以下B格式的接口
+export function xxxxxx(data) {
+  return request({
+    url: request.apiModule.xxxx + '/xxxxx/xxxx',
+    method: 'post',
+    data
+  })
+}
+
+两种方式写接口：
+1.在api文件中，引入http.js中封装的get等方法，按A格式写接口，调用接口时，需要额外import
+2.在api文件中，按B格式写接口xxx，在http.js中引入该接口方法，然后在全局变量api中xxx：xxx
