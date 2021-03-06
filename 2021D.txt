@@ -44,3 +44,9 @@ export function xxxxxx(data) {
 	1.去掉失焦时进行搜索的事件，
 	2.设置一个中间变量，比如searchData，按下搜索按钮之后才把表单里双向绑定的对象赋值给searchData，后端查询时候直接使用searchData，
 需要使用深拷贝，页面初始化的时候也要把listQuery的值拷贝给searchData，切换页码的事件中也要
+
+3/6
+let a = xxx
+     b = xxx
+     c = {xxx}
+采取以上写法时，会在1、2行分别补全逗号和分号，导致c为未声明变量，严格模式下会出错，特别是用到一些插件的方法的时候
