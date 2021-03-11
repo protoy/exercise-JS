@@ -49,4 +49,35 @@ export function xxxxxx(data) {
 let a = xxx
      b = xxx
      c = {xxx}
-采取以上写法时，会在1、2行分别补全逗号和分号，导致c为未声明变量，严格模式下会出错，特别是用到一些插件的方法的时候
+采取以上写法时，会在1、2行分别补全逗号和分号，导致c为未声明变量，特别是用到一些插件的时候，严格模式？
+
+3/7
+树型结构扁平化之后遍历起来更快
+
+扁平化结构拼接为树结构的两种方式
+循环方式
+function listToTree() {
+    let array = []
+    cityList .forEach(item => { // 遍历对象数组
+        item.children = cityList.filter(info => info.parentId === item.id) // 找到每个对象的子节点 
+        if (item.parentId === 0) {
+            array.push(item) // 将一层节点放入新数组中
+        }
+    })
+    return array //循环结束，返回结果
+}
+递归方式
+function recursionGenerateTree(pid, arr) {
+    let array = []
+    arr.forEach(item => {
+        if (item.parentId === pid) {
+            item.children = recursionGenerateTree(item.id, arr) // 接收子节点
+            array.push(item)
+        };
+    })
+    return array // 返回查找到的节点
+}
+console.log(recursionGenerateTree(0, cityList))
+————————————————
+版权声明：本文为CSDN博主「张三冥币白嫖无罪」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/zj2468581628/article/details/112912168
