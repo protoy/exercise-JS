@@ -94,3 +94,9 @@ tail -f catalina.out
 antDesign tab-pane设置v-show只控制tab页内部内容显示隐藏，tab页始终显示
 
 用nextTick 给子组件中变量赋值时，赋值事件晚于mounted
+
+3/26
+watch事件和nextTick事件先后顺序
+在单击不同节点触发的watch事件中给type赋值并打印
+在双击触发的nextTick中打印type，
+先后打印了watch中的，再打印了nextTick中内容，但是type为undefined
