@@ -54,9 +54,6 @@ let a = xxx
 3/7
 树型结构扁平化之后遍历起来更快
 
-4/12
-this.$store.getters.xxx可以直接通过赋值进行更改
-如 this.$store.getters.xxx.aaa = "text"
 扁平化结构拼接为树结构的两种方式
 循环方式
 function listToTree() {
@@ -103,3 +100,17 @@ watch事件和nextTick事件先后顺序
 在单击不同节点触发的watch事件中给type赋值并打印
 在双击触发的nextTick中打印type，
 先后打印了watch中的，再打印了nextTick中内容，但是type为undefined
+
+4/12
+this.$store.getters.xxx可以直接通过赋值进行更改
+如 this.$store.getters.xxx.aaa = "text"
+
+逻辑运算符
+	逻辑与 (&&)：expr1 && expr2
+(逻辑与) 如果expr1能被转换为false，那么返回expr1；否则，返回expr2。因此，&&用于布尔值时，当操作数都为true时返回true；否则返回false.
+
+	逻辑或 (||)	expr1 || expr2
+如果expr1能被转换为true，那么返回expr1；否则，返回expr2。因此，||用于布尔值时，当任何一个操作数为true则返回true；如果操作数都是false则返回false。
+
+	逻辑非 (!)	!expr
+(逻辑非) 如果操作数能够转换为true则返回false；否则返回true。
