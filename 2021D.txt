@@ -54,6 +54,9 @@ let a = xxx
 3/7
 树型结构扁平化之后遍历起来更快
 
+4/12
+this.$store.getters.xxx可以直接通过赋值进行更改
+如 this.$store.getters.xxx.aaa = "text"
 扁平化结构拼接为树结构的两种方式
 循环方式
 function listToTree() {
