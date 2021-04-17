@@ -114,3 +114,7 @@ this.$store.getters.xxx可以直接通过赋值进行更改
 
 	逻辑非 (!)	!expr
 (逻辑非) 如果操作数能够转换为true则返回false；否则返回true。
+
+4/17
+子组件调用父组件方法$emit('change', param1,param2)时，父组件中@change = "change",则父组件methods中change(param){param}，param仅代表第一个参数
+需要@change="change(param)"，methods中的param才能代表参数数组
