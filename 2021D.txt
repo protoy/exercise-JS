@@ -118,3 +118,7 @@ this.$store.getters.xxx可以直接通过赋值进行更改
 4/17
 子组件调用父组件方法$emit('change', param1,param2)时，父组件中@change = "change",则父组件methods中change(param){param}，param仅代表第一个参数
 需要@change="change(param)"，methods中的param才能代表参数数组
+
+5/18
+git checkout 负责两种功能，一个是切换分支，一个是恢复文件
+git 2.23版本更新中，提供了git switch 和 git restore
