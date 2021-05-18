@@ -122,3 +122,5 @@ this.$store.getters.xxx可以直接通过赋值进行更改
 5/18
 git checkout 负责两种功能，一个是切换分支，一个是恢复文件
 git 2.23版本更新中，提供了git switch 和 git restore
+
+CSS只对子一级元素生效 elementA>elementB
