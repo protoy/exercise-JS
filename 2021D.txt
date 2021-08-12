@@ -150,3 +150,5 @@ devServer: {
     proxy: 'http://localhost:8080',
     public: '192.168.xxx.xxx:8080'  // 本地ip
 }
+8/12
+数据计算较多的情况下，统一给定精度值，toFixed（val）统一配置
