@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>margin负值</title>
+    <style>
+        body{
+            margin:20px;
+        }
+        .float-left{
+            float: left;
+        }
+        .clearfix:after{
+            content: '';
+            display: table;
+            clear: both;
+        }
+        .container{
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        .container .item{
+            width: 100px;
+            height: 100px;
+        }
+        .container .border-blue{
+            border: 1px solid blue;
+        }
+        .container .border-red{
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <p>测试margin top、bottom负数情况</p>
+    <div class="container">
+        <div class="item border-blue">
+            this is item 1
+        </div>
+        <div class="item border-red">
+            this is item 1
+        </div>
+    </div>
+    <p>测试margin left、right负数情况</p>
+    <div class="container">
+        <div class="item border-blue float-left">
+            this is item 1
+        </div>
+        <div class="item border-red float-left">
+            this is item 1
+        </div>
+    </div>
+</body>
+</html>
