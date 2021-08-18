@@ -134,3 +134,21 @@ CSS只对子一级元素生效：elementA>elementB
 
 6/16
 get请求时传参如果含有特殊字符，encodeURI(name)，直接把空格等特殊字符转换乘encodeURI编码，可以省去replace每种转换
+
+7/7
+vue/cli 3.0 中sockjs-node报错
+GET http://192.168.1.108:9527/sockjs-node/info?t=1625627154887 net::ERR_CONNECTION_TIMED_OUT
+sockjs-node 提供跨浏览器JS的API，创建了一个低延迟、全双工的浏览器和web服务器之间的通信通道
+各端表现为：
+服务端：sockjs-node（https://github.com/sockjs/sockjs-node）
+客户端：sockjs-client（https://github.com/sockjs/sockjs-client）
+
+解决方案：
+1./node_modules/sockjs-client/dist/sockjs.js   在1605行注释掉self.xhr.send(payload);
+2.vue.config.js中的module.exports中添加如下，然后重启
+devServer: {
+    proxy: 'http://localhost:8080',
+    public: '192.168.xxx.xxx:8080'  // 本地ip
+}
+8/12
+数据计算较多的情况下，统一给定精度值，toFixed（val）统一配置
